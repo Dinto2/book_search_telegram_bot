@@ -49,6 +49,7 @@ async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
       searching = explore(text)
       # Now, it depends how many results we have. If we have one or more, or if we don't have anyone
       if len(searching) > 0:
+        # Here we will give until five results
         for i in searching[:5]:
           # Without preview image, the chat might be a little messy if you have many results and their images
           await context.bot.send_message(text=i[0]+'\n'+i[1], chat_id=sender_id, disable_web_page_preview=True)
